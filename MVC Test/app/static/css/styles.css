@@ -1,6 +1,41 @@
+.page_header {
+    background-color:rgb(199, 167, 167); 
+
+}
+
+.main_nav ul {
+    background-color:rgb(199, 167, 167);
+    color:aliceblue; 
+    list-style: none;
+    padding: 0;
+}
+
+.main_nav ul li:hover {
+    background-color:rgb(218, 118, 118);
+    border-radius:3px;
+    color:aliceblue; 
+    transition: 0.5ms;
+}
+
+.main_nav ul li a{
+    color:white; 
+    display: inline;
+}
+
+.main_nav ul li a:hover{
+    color:rgb(40, 43, 46); 
+    transition: 0.5ms;
+}
+
+
+.main_nav ul li{
+    display: inline;
+    margin: 0 20px;
+}
+
 /* app/static/css/style.css */
 body {
-    font-family: 'Courier New', monospace; /* Typewriter font for a historical feel */
+    font-family: "Arvo", serif; /* Typewriter font for a historical feel */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -9,33 +44,14 @@ body {
 }
 
 header {
-    background-image: linear-gradient(to right, #3a3a3a, #5a5c51); /* Subtle gradient to evoke metal */
     color: #faf4e6; /* Soft cream color for readability */
     padding: 20px 20px;
     text-align: center;
-    border-bottom: 5px solid #c9ba9d; /* Accent border like an old propeller color */
+    border-bottom: 5px solid #141311; /* Accent border like an old propeller color */
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
 
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
 
-header nav ul li a {
-    color: #d9c8b4; /* Soft parchment-like color */
-    text-decoration: none;
-    font-weight: bold; /* Enhanced visibility */
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-header nav ul li a:hover {
-    color: #b3a091; /* Darkened parchment for hover state */
-}
 
 main {
     padding: 30px;
@@ -46,13 +62,13 @@ main {
 }
 
 h1, h2 {
-    font-family: 'Georgia', serif; /* Maintained historical vibe with a serif font */
+    font-family: "Arvo", serif; /* Maintained historical vibe with a serif font */
     color: #ffffff; /* Dark grey for headers */
 }
 
-form {
+.upload_section,.search_box, .edit_doc,.doc_details {
     margin-top: 25px;
-    background: #e8dfd7; /* Subdued canvas-like background */
+    background-color:rgb(199, 167, 167);
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Enhanced depth with a stronger shadow */
@@ -63,6 +79,7 @@ form input[type="submit"],
 form input[type="file"] {
     padding: 12px;
     margin-top: 10px;
+    display: block;
     border: 2px solid #d3c6b2; /* Refined borders for inputs */
     background: #ffffff; /* Brighter input fields for contrast */
     border-radius: 6px; /* Subtle rounding of input fields */
@@ -70,7 +87,7 @@ form input[type="file"] {
 
 form input[type="submit"] {
     cursor: pointer;
-    background: #9a8873; /* Vintage leather flight jacket color for buttons */
+    background: #c5743d; /* Vintage leather flight jacket color for buttons */
     color: white;
     border: none;
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
@@ -96,12 +113,11 @@ li:last-child {
 }
 
 a {
-    color: #9a8873; /* Color links similar to old navigator maps */
+    color: #5355e4; /* Color links similar to old navigator maps */
     text-decoration: none;
     transition: color 0.3s ease; /* Enhance interactivity with color transition */
 }
 
 a:hover {
     text-decoration: underline;
-    color: #3a3a3a; /* Contrast enhancement on hover */
 }
