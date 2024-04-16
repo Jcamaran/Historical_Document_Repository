@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>{{ document.title }}</h2>
-<p>Author: {{ document.author }}</p>
-<p>Date: {{ document.date }}</p>
-<a href="{{ url_for('app_views.download_document', document_id=document.id) }}" download>Download</a>
+
+<section class="doc_details">
+    <h2>{{ document.title }}</h2>
+    <p>Author: {{ document.author }}</p>
+    <p>Date: {{ document.date }}</p>
+    <a href="{{ url_for('app_views.download_document', document_id=document.id) }}" download>Download</a>
+
+</section>
 {% endblock %}
