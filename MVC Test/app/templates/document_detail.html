@@ -3,5 +3,5 @@
 <h2>{{ document.title }}</h2>
 <p>Author: {{ document.author }}</p>
 <p>Date: {{ document.date }}</p>
-<a href="{{ url_for('static', filename='uploaded_documents/' + document.filepath) }}" download>Download</a>
+<a href="{{ url_for('app_views.download_document', document_id=document.id) }}" download>Download</a>
 {% endblock %}
