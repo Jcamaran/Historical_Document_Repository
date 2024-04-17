@@ -121,3 +121,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.doc_list {
+    border-radius: 5px;
+}
