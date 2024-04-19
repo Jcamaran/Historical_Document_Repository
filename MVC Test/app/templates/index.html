@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="gallery">
+    {% for document in documents %}
+        <div class="document">
+            <h3>{{ document.title }}</h3>
+            {% if document.filepath.endswith('.jpg') or document.filepath.endswith('.png') %}
+                <!-- Images displayed as thumbnails -->
+                <a href="{{ url_for('static', filename='uploaded_documents/' + document.filepath) }}" target="_blank">
+                    <img src="{{ url_for('static', filename='uploaded_documents/' + document.filepath) }}" alt="{{ document.title }}" style="width: 100px; height: auto;">
+                </a>
+            {% elif document.filepath.endswith('.pdf') %}
+                <!-- PDFs open in a new tab -->
+                <a href="{{ url_for('static', filename='uploaded_documents/' + document.filepath) }}" target="_blank">{{ document.title }}</a>
+            {% else %}
+                <!-- Other files as direct downloads -->
+                <a href="{{ url_for('static', filename='uploaded_documents/' + document.filepath) }}" download>{{ document.title }}</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
