@@ -1,0 +1,156 @@
+.page_header {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Distribute items to both ends of the flex container */
+    align-items: center; /* Center items vertically */
+    background-image: url("https://flexjet.com/eu/wp-content/uploads/sites/2/2023/09/sikorsky-image-break-1.jpg");
+    background-size: cover; /* This will make the image cover the entire background */
+    background-position: center; /* This will center the image */
+    padding: 20px; /* Adjust padding as needed */
+}
+.page_header h1 {
+    font-size: 35px;     /* Remove default margin */
+    background-color: rgba(50, 45, 45, 0.766);
+    height: 60px;
+    width: 650px;
+    border-radius: 4px;
+    margin: 0;
+}
+
+.main_nav {
+    margin-right: 20px; /* Optional margin for the navigation */
+}
+
+.main_nav ul {
+    background-color: transparent;
+    color: rgb(114, 98, 98); 
+    list-style: none;
+    padding: 0;
+    transform: ;
+    margin-right: 20px;
+    flex-direction: column;
+    display: block;
+    justify-content: flex-end; /* Align items to the end of the flex container */
+}
+
+.main_nav ul li {
+    /* background-color: rgb(173, 155, 132); */
+    border-radius: 3px;
+    color: aliceblue; 
+    transition: 0.5ms;
+}
+
+.main_nav ul li a {
+    color: white; 
+    display: block;
+}
+
+.main_nav ul li a:hover {
+    color: rgb(40, 43, 46); 
+    transition: 0.5ms;
+}
+
+.main_nav ul li {
+    display: inline;
+    background-color: rgb(114, 98, 98); 
+    margin: 0 5px;
+    width:100px;
+    height: 5px; 
+}
+
+
+/* app/static/css/style.css */
+body {
+    font-family: "Arvo", serif; /* Typewriter font for a historical feel */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #fdfaf6; /* Lighter aged paper look */
+    color: #2d2d2d; /* Deeper contrast for better readability */
+}
+
+header {
+    color: #faf4e6; /* Soft cream color for readability */
+    padding: 20px 20px;
+    text-align: center;
+    border-bottom: 5px solid #141311; /* Accent border like an old propeller color */
+    height: 175px;
+}
+.page_header h1{
+    margin-top: 0;
+    transform: translateY(-20px)
+
+}
+
+
+
+main {
+    padding: 30px;
+    margin-top: 30px;
+    background: rgba(253, 250, 246, 0.95); /* Slightly opaque background for content */
+    border-radius: 12px; /* Updated rounded corners */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* Soft shadow for depth */
+}
+
+h1, h2 {
+    font-family: "Arvo", serif; /* Maintained historical vibe with a serif font */
+    color: #ffffff; /* Dark grey for headers */
+}
+
+.upload_section,.search_box, .edit_doc,.doc_details {
+    margin-top: 25px;
+    background-color:rgb(199, 167, 167);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Enhanced depth with a stronger shadow */
+}
+
+form input[type="text"],
+form input[type="submit"],
+form input[type="file"] {
+    padding: 12px;
+    margin-top: 10px;
+    display: block;
+    border: 2px solid #d3c6b2; /* Refined borders for inputs */
+    background: #ffffff; /* Brighter input fields for contrast */
+    border-radius: 6px; /* Subtle rounding of input fields */
+}
+
+form input[type="submit"] {
+    cursor: pointer;
+    background: #c5743d; /* Vintage leather flight jacket color for buttons */
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+form input[type="submit"]:hover {
+    background: #807567; /* Darker tone on hover for button */
+}
+
+ul {
+    background: #fff;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    padding: 0;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+a {
+    color: #5355e4; /* Color links similar to old navigator maps */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Enhance interactivity with color transition */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.doc_list {
+    border-radius: 5px;
+}
