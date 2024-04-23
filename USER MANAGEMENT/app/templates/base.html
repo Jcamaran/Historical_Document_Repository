@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Document Repository</title>
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="page_header" id="header"> <!-- Added class "page_header" and ID "header" -->
+    <header class="page_header" id="header">
         <h1>Historical Document Repository</h1>
-        <nav class="main_nav" id="main_nav"> <!-- Added class "main_nav" and ID "main_nav" --> 
+        <nav class="main_nav" id="main_nav">
             <ul>
                 <li><a href="{{ url_for('app_views.index') }}">Home</a></li>
+                {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('app_views.upload') }}">Upload Document</a></li>
                 <li><a href="{{ url_for('app_views.search') }}">Search Document</a></li>
 
@@ -24,7 +24,10 @@
                 {% if document %}
                     <li><a href="{{ url_for('app_views.edit_document', document_id=document.id) }}">Edit Document</a></li>
                  {% endif %}
-
+                    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
@@ -69,7 +72,5 @@
         </div>
     </main>
     {% endblock %}
-
-  
 </body>
 </html>
