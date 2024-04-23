@@ -28,10 +28,13 @@ def upload_document():
         
         return redirect(url_for('app_views.document_detail', document_id=new_document.id))
 
-@app_views.route('/search')
+@app_views.route('/search', methods=['GET'])
 def search():
     query = request.args.get('query', '')
-    documents = Document.query.filter(Document.title.contains(query) | Document.author.contains(query)).all()
+    if query:
+        documents = Document.query.filter(Document.title.contains(query) | Document.author.contains(query)).all()
+    else:
+        documents = []  # Return an empty list if no query is provided
     return render_template('search.html', documents=documents, query=query)
 
 @app_views.route('/documents/<int:document_id>')
