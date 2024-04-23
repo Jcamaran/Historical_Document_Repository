@@ -42,7 +42,10 @@ def upload():
 @login_required
 def search():
     query = request.args.get('query', '')
-    documents = Document.query.filter(Document.title.contains(query) | Document.author.contains(query)).all()
+    if query:
+        documents = Document.query.filter(Document.title.contains(query) | Document.author.contains(query)).all()
+    else:
+        documents = []  # Return an empty list if no query is provided
     return render_template('search.html', documents=documents, query=query)
 
 @app_views.route('/documents/<int:document_id>')
@@ -92,3 +95,4 @@ def delete_document(document_id):
         return redirect(url_for('app_views.search'))
     else:
         return render_template('delete_document.html', document=document)
+
