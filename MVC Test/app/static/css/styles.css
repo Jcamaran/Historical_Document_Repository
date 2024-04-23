@@ -131,7 +131,7 @@ h1, h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    padding: 10px;
     border-radius: 2px;
 }
 
@@ -140,6 +140,7 @@ h1, h2 {
 
 
 .main_content{
+    background-color:#E4C59E ;
     margin:0px;
     padding: 0px;
     box-sizing: border-box;
@@ -166,6 +167,10 @@ h1, h2 {
     height: auto;
 }
 
+.card:hover {
+    transform: scale(1.05); /* Zoom in on hover */
+    transition: 0.5s;
+}
 .card_content {
     font-size: 12px;
     line-height: 1.3;
