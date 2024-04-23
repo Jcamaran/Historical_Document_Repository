@@ -38,15 +38,19 @@ def upload():
 
     return render_template('upload.html')
 
+# Update the search route in views.py
 @app_views.route('/search', methods=['GET'])
 @login_required
 def search():
     query = request.args.get('query', '')
     if query:
+        # Perform keyword-based search
         documents = Document.query.filter(Document.title.contains(query) | Document.author.contains(query)).all()
     else:
-        documents = []  # Return an empty list if no query is provided
+        # Retrieve all documents if no keyword is provided
+        documents = Document.query.all()
     return render_template('search.html', documents=documents, query=query)
+
 
 @app_views.route('/documents/<int:document_id>')
 @login_required
@@ -81,18 +85,17 @@ def edit_document(document_id):
 
 @app_views.route('/delete/<int:document_id>', methods=['GET', 'POST'])
 @login_required
-#@admin_permission.require(http_exception=403)  # Admin only permission
 def delete_document(document_id):
     document = Document.query.get_or_404(document_id)
     if request.method == 'POST':
         try:
             os.remove(os.path.join(current_app.config['UPLOAD_FOLDER'], document.filepath))
-            db.session.delete(document)
-            db.session.commit()
+            document.delete_document()  # Call the method to delete the database record
             flash('Document deleted successfully.', 'success')
         except Exception as e:
             flash(f'Failed to delete document: {str(e)}', 'danger')
         return redirect(url_for('app_views.search'))
     else:
         return render_template('delete_document.html', document=document)
+
 
