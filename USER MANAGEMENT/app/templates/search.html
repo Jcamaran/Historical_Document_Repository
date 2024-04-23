@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="search_box">
-    <h2>Search Documents</h2>
-    <form action="{{ url_for('app_views.search') }}" method="get">
-        <input type="text" name="query" placeholder="Enter keywords">
-        <input type="submit" value="Search">
-    </form>
-    <ul>
-        {% for document in documents %}
-        <li><a href="{{ url_for('app_views.document_detail', document_id=document.id) }}">{{ document.title }}</a></li>
-        {% else %}
-        <li>No documents found.</li>
-        {% endfor %}
-    </ul>
-</section>
+<div class="main_search">
+    <section class="search_wrapper">
+        <div class="search_box">
+            <h2 class="search_header">Search Documents</h2>
+            <form action="{{ url_for('app_views.search') }}" method="get" class="search_form">
+                <input type="text" name="query" placeholder="Enter keywords" class="search_input">
+                <input type="submit" value="Search" class="search_button">
+            </form>
+            <ul class="search_results">
+                {% for document in documents %}
+                <li><a href="{{ url_for('app_views.document_detail', document_id=document.id) }}" class="search_result_link">{{ document.title }}</a></li>
+                {% else %}
+                <li>No documents found.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+</div>
 {% endblock %}
