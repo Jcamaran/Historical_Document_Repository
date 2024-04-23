@@ -2,15 +2,16 @@
 {% block content %}
 
 
-<section class="upload_section">
-    <h2 class="u">Upload Document</h2>
-    <form action="{{ url_for('app_views.upload') }}" method="post" enctype="multipart/form-data">
-        Document: <input type="file" name="document" required><br>
-        Title: <input type="text" name="title" required><br>
-        Author: <input type="text" name="author"><br>
-        Date: <input type="text" name="date"><br>
-        <input type="submit" value="Upload">
+<section class="upload_wrapper">
+    <div class="upload_section">
+        <h2 class="upload_header">Upload Document</h2>
+        <form action="{{ url_for('app_views.upload') }}" method="post" enctype="multipart/form-data">
+            Document: <input class="input_box" type="file" name="document" required><br>
+            Title: <input class="input_box" type="text" name="title" required><br>
+            Author: <input class="input_box" type="text" name="author"><br>
+            Date: <input  class="input_box" type="text" name="date"><br>
+            <input type="submit" value="Upload">
+    </div>
     </form>
 </section>
-
     {% endblock %}
