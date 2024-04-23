@@ -32,3 +32,8 @@ class Document(db.Model):
 
     def __repr__(self):
         return f'<Document {self.title}>'
+
+    def delete_document(self):
+        # Delete the document record from the database
+        db.session.delete(self)
+        db.session.commit()
