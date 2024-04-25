@@ -96,7 +96,7 @@
 /* app/static/css/style.css */
 body {
     font-family: "Arvo", serif; /* Typewriter font for a historical feel */
-    line-height: 1.6;
+    /* line-height: 1.6; */
     margin: 0;
     padding: 0;
     background: #fdfaf6; /* Lighter aged paper look */
@@ -145,9 +145,8 @@ h1, h2 {
 
 
 .main_content{
-    height:100vh;
     background-color:#E4C59E ;
-    min-height: 1000px;
+    /* min-height: 1000px; */
     margin:0px;
     padding: 0px;
     box-sizing: border-box;
@@ -241,7 +240,7 @@ form input[type="submit"] {
 
 .upload_wrapper {
     background-color:#E4C59E ;
-
+    padding:40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -251,7 +250,8 @@ form input[type="submit"] {
 .upload_section {
     background-color: #c5743d;
     padding: 20px;
-    margin-bottom: 500px;
+    margin-bottom:auto;
+    
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
@@ -288,18 +288,18 @@ form input[type="submit"] {
 .search_wrapper {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: auto;
     background-color:#E4C59E ;
-
+    height: 100vh;
     align-items: center;
-    padding-top: 40px;
+    padding: 40px;
 }
 
 .search_box {
     background-color: #c5743d;
     padding: 20px;
     border-radius: 10px;
-    margin-bottom: 800px;
+    margin-bottom: auto;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
 }
