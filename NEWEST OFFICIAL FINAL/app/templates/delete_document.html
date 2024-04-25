@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="delete-body">
+    <div class="delete-container">
+        <h1>Delete Document</h1>
+        <p>Are you sure you want to delete the document titled "{{ document.title }}"?</p>
+        <form action="{{ url_for('app_views.delete_document', document_id=document.id) }}" method="post">
+            <button type="submit" class="delete-btn">Delete</button>
+            <a href="{{ url_for('app_views.document_detail', document_id=document.id) }}" class="cancel-link">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

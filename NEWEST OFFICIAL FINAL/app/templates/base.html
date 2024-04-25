@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Repository</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="page_header" id="header">
+        <h1>Historical Document Repository</h1>
+        <nav class="main_nav" id="main_nav">
+            <ul>
+                <li><a href="{{ url_for('app_views.index') }}">Home</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('app_views.upload') }}">Upload Document</a></li>
+                <li><a href="{{ url_for('app_views.search') }}">Search Document</a></li>
+
+                {% if document is defined %}
+                    <li><a href="{{ url_for('app_views.delete_document', document_id=document.id) }}">Delete</a></li>
+                {% endif %}
+                {% if document %}
+                    <li><a href="{{ url_for('app_views.edit_document', document_id=document.id) }}">Edit Document</a></li>
+                 {% endif %}
+                    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    {% block content %}
+    <main class="main_content" id="main_content">
+        <div class="header_wrapper">
+            <h2 class="content_header">Trending Articles</h2>
+        </div>
+        <div class="card_container">
+            <div class="card">
+                <img src="https://sikorskyarchives.com/wp-content/uploads/2020/09/image014.jpg">
+                <div class="card_content">
+                    <h3>Bill Paul: Reflections on Sikorsky’s 100th Anniversary</h3>
+                    <p>Former Sikorsky President Bill Paul reflects on his career with Sikorsky, meeting Igor Sikorsky, and the Sikorsky Aircraft Company’s 100th anniversary.</p>
+                    <a href="https://sikorskyarchives.com/bill-paul-reflections-on-sikorskys-100th-anniversary/" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://sikorskyarchives.com/wp-content/uploads/elementor/thumbs/NEWS-2024-01-1-qkshmmd11jnrl6c3ietwwyybcdndnu1m5bzghag1hk.jpg">
+                <div class="card_content">
+                    <h3>Sikorsky Recognizes Rescues</h3>
+                    <p>The life saving power of the helecopter was clear soon after Sikorsky Aircraft began S-47 production in Bridgeport, Connectitcut in 1942.</p>
+                    <a href="https://sikorskyarchives.com/sikorsky-recognizes-rescues/" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://sikorskyarchives.com/wp-content/uploads/elementor/thumbs/2024_Igors-Dream-Release-Event_thumb-qijlvxso33b67t4pcqb4z3y63tb3vc9fd84kqq2xs8.jpg">
+                <div class="card_content">
+                    <h3>Sikorsky Archives Participates in Two Roads Brewing’s 2024 Igor’s Dream Release Day
+                    </h3>
+                    <p>he Igor I. Sikorsky Historical Archives will take part in the 12th annual release of Two Roads Brewing’s Igor’s Dream Imperial Stout, on Saturday, February 3, 2024.</p>
+                    <a href="https://sikorskyarchives.com/igors-dream-release-party-2024/" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://sikorskyarchives.com/wp-content/uploads/elementor/thumbs/NEWS-2023-10-cover-qfa00uqoe32niocsr8qpa19681ks48260srcaxdlzc.jpg">
+                <div class="card_content">
+                    <h3>Sikorsky Art: The “Might-Have-Beens”
+                    </h3>
+                    <p>Sikorsky engineers have long drawn or painted concept aircraft that never flew, but their art revealed ideas that advanced real-world flight. These "Might-Have-Been" concepts are the focus of this month's newsletter.</p>
+                    <a href="https://sikorskyarchives.com/sikorsky-art-the-might-have-beens/" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://sikorskyarchives.com/wp-content/uploads/elementor/thumbs/20231012_Sikorsky-tablet-qecwqfvbbmt2979hacrul9s9tn8y5tz10rfwa1hnd4.jpg">
+                <div class="card_content">
+                    <h3>Sikorsky Archives Opens New Home at Sacred Heart University
+                    </h3>
+                    <p>On 12 October 2023, the Igor I. Sikorsky Historical Archives formally opened its new home at Sacred Heart University (SHU) in Fairfield, Connecticut. 		</p>
+                    <a href="https://sikorskyarchives.com/sikorsky-archives-opens-new-home-at-sacred-heart-university/" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://sikorskyarchives.com/wp-content/uploads/elementor/thumbs/NEWS-2023-07-tablet-qecxhwpj1cepizd4w87dgc96qzv33f0ngpqp54rhjc.jpg">
+                <div class="card_content">
+                    <h3>Sikorsky to Go – The Field Service Representatives
+                    </h3>
+                    <p>Sikorsky Field Representatives have long traveled the world to share technical expertise with customers. they remain the primary point of contact for Sikorsky's military and commercial customers.	</p>
+                    <a href="https://sikorskyarchives.com/sikorsky-to-go-the-field-service-representatives/" class="btn">Read More</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% endblock %}
+</body>
+</html>
