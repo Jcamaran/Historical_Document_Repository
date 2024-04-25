@@ -270,7 +270,7 @@ form input[type="submit"] {
     border-radius: 5px;
 }
 
-.upload_submit {
+.upload_button {
     width: 100%;
     padding: 10px;
     font-size: 15px;
@@ -279,9 +279,11 @@ form input[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    
 }
-.upload_submit:hover {
-    background-color: #45a049;
+.upload_button:hover {
+    background: #e64615; 
+    transition: 0.5s;
 }
 
 /* ----------------------------Search Section Styles-------------------- */
