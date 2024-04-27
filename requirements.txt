@@ -1,0 +1,12 @@
+pip install Flask
+pip install SQLAlchemy
+pip install Flask-Login
+pip install email-validator
+pip install Flask-Principal
+pip install Flask-WTF
+pip install Jinja2
+pip install pdf2image
+pip install PyPDF2
+pip install Werkzeug
+pip install WTForms
+pip install Flask-Auth
